@@ -16,52 +16,13 @@ Le projet permet de comprendre ce que chaque métrique mesure, de suivre ses cal
 ```text
 .
 ├── README.md
-├── TP_Evaluation_NLP_3_Taches.ipynb
 └── TP_Evaluation_NLP_3_Taches_Execute.ipynb
 ```
 
 - `TP_Evaluation_NLP_3_Taches_Execute.ipynb` : version comportant des sorties de démonstration déjà enregistrées.
 - `README.md` : documentation du code et des instructions d'exécution.
 
-## Prérequis et installation
 
-- Python 3.10 ou version récente compatible avec les bibliothèques installées.
-- Jupyter Notebook ou JupyterLab, ou Google Colab.
-- Un processeur classique suffit pour les démonstrations de base.
-- Une connexion Internet est nécessaire au premier téléchargement des modèles avancés.
-
-Installation minimale dans un terminal :
-
-```bash
-python -m venv .venv
-# Windows PowerShell : .venv\Scripts\Activate.ps1
-# Linux/macOS : source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install notebook matplotlib
-jupyter notebook
-```
-
-Ouvrir `TP_Evaluation_NLP_3_Taches.ipynb`, puis exécuter les cellules dans l'ordre. Dans Google Colab, importer directement le fichier `.ipynb` ; les principales bibliothèques de base sont généralement déjà disponibles.
-
-### Modules facultatifs
-
-Pour les métriques avancées, installer selon les besoins :
-
-```bash
-python -m pip install bert-score torch transformers
-python -m pip install sentence-transformers
-python -m pip install mauve-text
-```
-
-Les cellules de modèles préentraînés sont **désactivées par défaut** :
-
-```python
-RUN_HEAVY = False
-```
-
-Mettre `RUN_HEAVY = True` dans la cellule de préparation uniquement après installation des dépendances. Les exécutions avancées peuvent prendre du temps, utiliser davantage de mémoire et télécharger des poids de modèles. Il est possible de les lancer sur CPU ; une accélération GPU peut être utile.
-
-**Important :** la cellule MAUVE vérifie également la taille des corpus et refuse le calcul dans l'exemple fourni, même si `RUN_HEAVY=True`, car les corpus d'illustration sont trop petits. Pour la débloquer, remplacer les deux listes par des corpus suffisamment volumineux et comparables.
 
 ## Partie 1 — Résumé automatique (*Text Summarization*)
 
